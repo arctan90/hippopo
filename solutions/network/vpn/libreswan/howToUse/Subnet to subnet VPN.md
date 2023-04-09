@@ -2,6 +2,10 @@
 在多个subnet中的两个endpoint上创建tunnel和主机到主机的VPN类似，区别在于添加的是left subnet和right subnet。
 我们使用also=关键字避免向每个连接中添加相同信息。
 
+## 两个主机的网络
+192.0.2.254/24 eth0 WEST eth1 192.1.2.23 --[internet]-- 192.1.2.45 eth1 EAST eth0 192.0.1.254/24
+
+## 配置
 ```shell
 # /etc/ipsec.conf
 
