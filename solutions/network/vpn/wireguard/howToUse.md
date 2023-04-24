@@ -32,6 +32,12 @@ $ sudo yum install wireguard-dkms wireguard-tools
 # yum-config-manager --save --setopt=ol7_developer_UEKR6.includepkgs='wireguard-tools*'
 # yum install wireguard-tools
 ```
+或者
+```shell
+yum install epel-release https://www.elrepo.org/elrepo-release-7.el7.elrepo.noarch.rpm
+yum install yum-plugin-elrepo
+yum install kmod-wireguard wireguard-tools -y
+```
 
 # 使用
 假设有两台机器，A和B
