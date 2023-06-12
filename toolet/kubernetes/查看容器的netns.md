@@ -1,0 +1,1 @@
+https://stackoverflow.com/guestions/31265993/docker-networking-namespace-not-visible-in-ip-netns-list
