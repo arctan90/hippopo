@@ -1,0 +1,1 @@
+kubectl get secret -n xxx sh.helm.release.v1.chartname.v1 -ojsonpath='{.data.release}' | tr -d '"' | base64 -d|base64 -d|gzip -d|jq

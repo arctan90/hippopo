@@ -35,7 +35,7 @@ $ sudo yum install wireguard-dkms wireguard-tools
 或者
 ```shell
 yum install epel-release https://www.elrepo.org/elrepo-release-7.el7.elrepo.noarch.rpm
-yum install yum-plugin-elrepo
+yum install -y yum-plugin-elrepo
 yum install kmod-wireguard wireguard-tools -y
 ```
 
@@ -103,4 +103,9 @@ wg set wg0 listen-port 51820 private-key /path/to/private-key peer ABCDEF... all
 Finally, the interface can then be activated with ifconfig(8) or ip-link(8):
 ```shell
 ip link set up dev wg0
+```
+
+帮助信息
+```shell
+wg show
 ```
