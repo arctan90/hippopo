@@ -15,3 +15,8 @@ uname -m && cat /etc/redhat-release
 
 # 查看所有的服务项
 systemctl list-unit-files --type=service
+
+# 磁盘数据恢复工具 test
+## 安装
+sudo apt-get install testdisk
+
