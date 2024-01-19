@@ -8,7 +8,7 @@ tcpdump -XvennSs 0 -i eth0 'tcp and (((ip[2:2]-((ip[0]&0xf)<<2))-((tcp[12]&0xf0)
 uname -m && cat /etc/redhat-release
 
 # 安装conda
-
+w
 # 阿里云ecs磁盘扩容
 1. parted /dev/vda print free 可以看到有free空间
 2. 由于/dev/vda2挂载到了/

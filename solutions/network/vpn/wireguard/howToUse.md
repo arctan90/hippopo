@@ -2,6 +2,9 @@
 ## Ubuntu
 https://launchpad.net/ubuntu/+source/wireguard-linux-compat
 https://launchpad.net/ubuntu/+source/wireguard
+
+https://y2k38.github.io/posts/how-to-setup-wireguard-vpn-server/
+
 ## openwrt
 https://git.openwrt.org/?p=openwrt/openwrt.git;a=blob;f=package/network/utils/wireguard-tools/Makefile
 ## centOS8

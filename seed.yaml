@@ -1,0 +1,44 @@
+version: v1beta1
+kind: Tuning
+metadata:
+  name: RunOnce
+  labels:
+    - stable: "true"
+    - watcher: "stes-one"
+init:
+  command: "mysqldump > backup.sql"
+spec:
+  upstreams:
+    protocol: http
+    content-type: text/plain
+    kind: DataGateway
+  downstream:
+    - protocol: grpc
+      content-type: bytes
+      kind: MessageBroker
+    - protocol: http
+      content-type: application/json
+      kind: OSS
+  command:
+    # 顺序执行，每一行写一个命令
+    - "chmod 660 ./startup.sh"
+    - "bash run ./startup.sh"
+  liveness:
+    type: http
+    command:
+      - "curl http://127.0.0.1:8080"
+    startDelaySeconds: 5
+    intervalSeconds: 30
+  env:
+    - name: "OS"
+      value: "armv8"
+    - name: "IP_PROTOCOL"
+      value: "v6"
+  dependencies:
+    - kind: Database
+      default: SQLite
+      config: -|
+        user=root
+        password=123456
+        database=database/development.sqlite3
+        models= app/models
