@@ -20,6 +20,8 @@
 `ERROR: Could not install packages due to an EnvironmentError: Missing dependencies for SOCKS support.`
 先在zshrc或者.bashrc里把代理all_proxy注释掉，然后重进bash或zsh，然后装个pysocks `pip install pysocks` ，然后反注释all_proxy，重进bash即可
 
+如果是conda，使用 `conda install pysocks`
+
 # conda无法create
 先用`python3 -c "import requests; print(requests.__version__)"`查下版本，看是不是太低了
 然后用`pip3 install requests --upgrade`更新一下requests
